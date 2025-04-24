@@ -21,8 +21,12 @@ import com.blog.app.service.PostService;
 public class HomeController {
 	@Autowired
 	private PostService postService;
-	
-	@GetMapping("/") 
+
+	@GetMapping("/")
+		public String newHoome() {
+			return "Hello World";
+		}
+	@GetMapping("/home") 
 	public String home(Model model,@RequestParam(required = false ,name="sort_by",defaultValue = "createdAt")String sort_by,
 			@RequestParam(required = false,name = "per_page",defaultValue = "1")String per_page,
 			@RequestParam(required = false,name="page",defaultValue = "1") String page) {
